@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Prediction Result</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+    }
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .result {
+      font-size: 24px;
+      text-align: center;
+      color: {{ 'red' if result == 'Diabetic' else 'green' }};
+    }
+    .inputs, .navigation {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .inputs p {
+      margin: 5px;
+    }
+    a {
+      margin: 10px;
+      text-decoration: none;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧪 Diabetes Prediction Result</h2>
+
+    <div class="result">
+      <strong>{{ result }}</strong>
+    </div>
+
+    <img src="{{ url_for('static', filename=chart_path.split('static/')[-1]) }}" alt="Diabetes Prediction Chart" width="400">
+    <h3>🩺 AI-Recommended Advice:</h3>
+    <pre>{{ advice }}</pre>
+    
+    <div class="inputs">
+      <p>Pregnancies: <strong>{{ preg }}</strong></p>
+      <p>Glucose Level: <strong>{{ glucose }}</strong></p>
+      <p>BMI: <strong>{{ bmi }}</strong></p>
+    </div>
+
+    <div class="navigation">
+      <a href="/predict/diabetes">🔁 Try Again</a> |
+      <a href="/dashboard">🏠 Back to Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

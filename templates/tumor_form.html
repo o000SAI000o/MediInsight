@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tumor Prediction</title></head>
+<body>
+    <h2>Tumor Classification (Logistic Regression)</h2>
+    <form method="POST">
+        Tumor Size (mm): <input type="number" step="0.1" name="size" required><br>
+        Growth Rate (mm/month): <input type="number" step="0.1" name="growth_rate" required><br>
+        Roundness Score (0.2 to 1.0): <input type="number" step="0.01" name="roundness_score" required><br>
+        <button type="submit">Predict</button>
+    </form>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

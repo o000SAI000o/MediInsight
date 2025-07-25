@@ -1,0 +1,69 @@
+🧭 Clear Project Architecture
+
+| Layer         | Tech                        | Role                 |
+| ------------- | --------------------------- | -------------------- |
+| **Frontend**  | HTML + Bootstrap + Flask    | Auth, Pages          |
+| **Backend**   | Flask + SQLAlchemy          | Auth, Routing, DB    |
+| **ML Models** | scikit-learn, XGBoost etc   | Disease prediction   |
+| **Dashboard** | Streamlit                   | User reports, charts |
+| **Storage**   | SQLite (initially)          | User, Reports        |
+| **Extras**    | Pandas, Matplotlib, Seaborn | Charting in reports  |
+
+🧩 Step-by-Step Development Plan
+| Phase | Feature                                 | Tech               |
+| ----- | --------------------------------------- | ------------------ |
+| 1️⃣   | Basic Flask app + login/signup          | Flask + SQLAlchemy |
+| 2️⃣   | Add dashboard (after login)             | Bootstrap + Jinja  |
+| 3️⃣   | Integrate 2 ML models (Diabetes, Heart) | scikit-learn       |
+| 4️⃣   | Create prediction form + show result    | HTML + Flask       |
+| 5️⃣   | Generate + store report                 | Matplotlib + DB    |
+| 6️⃣   | Embed Streamlit dashboard               | Streamlit          |
+| 7️⃣   | Polish UI + Add more models             | CSS + ML           |
+
+
+🏗️ Project Modules Overview
+🔐 1. User Authentication (Flask + SQLAlchemy)
+Signup/Login system
+
+Dashboard after login
+
+User session maintained
+
+🧪 2. ML Model Prediction Interface
+User selects model (e.g., Diabetes)
+
+Enters required fields via form
+
+Model runs and returns prediction + insights
+
+📄 3. Auto-Generated Report (PDF/HTML)
+Charts + prediction + conclusion
+
+Stored in DB with timestamp
+
+Can download or revisit later
+
+📊 4. Streamlit Dashboard
+View past predictions
+
+Visual summary (charts, trends)
+
+Simple filters (e.g., by date, type)
+
+📂 Data Flow (Simplified)
+
+User logs in → Dashboard → Selects ML tool (e.g. Diabetes)
+ → Inputs data → Model runs → Result + Graphs generated
+ → Report saved → User can view in Streamlit
+
+
+📂 Folder Structure (Current)
+
+your_project/
+├── app.py                   ← (Main app)
+├── users.db                 ← (Auto-created DB)
+├── templates/
+│   ├── home.html
+│   ├── signup.html
+│   ├── login.html
+│   └── dashboard.html

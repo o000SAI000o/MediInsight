@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - MediInsight</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px; }
+        h1, h2 { color: #333; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            background-color: #fff;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        a.btn {
+            padding: 6px 12px;
+            background-color: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        a.btn:hover {
+            background-color: #c82333;
+        }
+        .stats {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🛠️ Admin Dashboard</h1>
+
+    <div class="stats">
+        <p>Total Users: <strong>{{ total_users }}</strong></p>
+        <p>Total Reports: <strong>{{ total_reports }}</strong></p>
+    </div>
+
+    <h2>👥 All Users</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Is Admin</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ 'Yes' if user.is_admin else 'No' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>📄 All Reports</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Model Type</th>
+            <th>Input Data</th>
+            <th>Result</th>
+            <th>Timestamp</th>
+            <th>Action</th>
+        </tr>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.id }}</td>
+            <td>{{ report.user }}</td>
+            <td>{{ report.model_type }}</td>
+            <td>{{ report.input_data }}</td>
+            <td>{{ report.result }}</td>
+            <td>{{ report.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+            <td><a href="{{ url_for('delete_report', report_id=report.id) }}" class="btn">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

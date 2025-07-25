@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+  <h2>Welcome, {{ user }}</h2>
+  <p>Choose a prediction tool:</p>
+  <ul>
+    <li><a href="/predict/tumor">Tumor Prediction</a></li>
+    <li><a href="/predict/diabetes">Diabetes Prediction</a></li>
+  </ul>
+
+  <h3>Your Prediction Reports</h3>
+  {% if reports %}
+    <ul>
+    {% for report in reports %}
+      <li>
+        <strong>{{ report.model_type }}</strong> ({{ report.timestamp.strftime('%Y-%m-%d %H:%M') }}): 
+        <br>Input: {{ report.input_data }} → Result: {{ report.result }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No reports yet.</p>
+  {% endif %}
+  <h3>📊 Prediction Comparison Chart</h3>
+  <img src="{{ url_for('static', filename='compare_chart.png') }}" alt="Comparison Chart" width="600">
+  <a href="/logout">Logout</a>
+  <a href="http://localhost:8501" target="_blank">
+  <button>📊 Open Streamlit Dashboard</button>
+</a>
+
+</body>
+</html>
