@@ -1,6 +1,3 @@
-Great! Here's a clean and professional **project structure** with a detailed `README.md` to organize your MediInsight system that includes both the **Flask backend** and the **Streamlit dashboard**.
-
----
 
 ## 📁 Project Structure
 
