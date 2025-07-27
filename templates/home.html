@@ -1,8 +1,137 @@
 <!DOCTYPE html>
-<html>
-<head><title>Home</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediInsight - AI Medical Diagnostics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .home-container {
+            text-align: center;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .auth-link {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .signup-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .login-btn {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .auth-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 480px) {
+            .home-container {
+                padding: 40px 20px;
+            }
+            
+            .auth-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .auth-link {
+                width: 100%;
+                text-align: center;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
 <body>
-    <h2>Welcome to MediInsight</h2>
-    <a href="/signup">Signup</a> | <a href="/login">Login</a>
+    <div class="home-container">
+        <div class="logo">🏥</div>
+        <h2>Welcome to MediInsight</h2>
+        <p class="tagline">AI-Powered Medical Diagnostics</p>
+        
+        <div class="auth-buttons">
+            <a href="signup" class="auth-link signup-btn">Signup</a>
+            <a href="login" class="auth-link login-btn">Login</a>
+        </div>
+    </div>
 </body>
 </html>

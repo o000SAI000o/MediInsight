@@ -1,14 +1,213 @@
 <!DOCTYPE html>
-<html>
-<head><title>Signup</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .signup-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: bounce 0.6s ease-out;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            75% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4ECDC4;
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.2);
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .signup-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(78, 205, 196, 0.3);
+        }
+
+        .signup-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .login-text {
+            margin-top: 25px;
+            color: #666;
+        }
+
+        .login-text a {
+            color: #4ECDC4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .login-text a:hover {
+            color: #44A08D;
+        }
+
+        /* Fun floating shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape1 {
+            width: 70px;
+            height: 70px;
+            top: 15%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape2 {
+            width: 50px;
+            height: 50px;
+            top: 70%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape3 {
+            width: 90px;
+            height: 90px;
+            bottom: 15%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 480px) {
+            .signup-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
 <body>
-    <h2>Signup</h2>
-    <form method="POST">
-        Username: <input type="text" name="username" required><br>
-        Email: <input type="email" name="email" required><br>
-        Password: <input type="password" name="password" required><br>
-        <button type="submit">Signup</button>
-    </form>
-    <a href="/login">Already have an account? Login</a>
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+
+    <div class="signup-box">
+        <h1>Welcome!</h1>
+        <p class="subtitle">Let's create your account</p>
+
+        <form method="POST">
+            <div class="input-group">
+                <input type="text" 
+                       name="username" 
+                       placeholder="Choose a username" 
+                       required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" 
+                       name="email" 
+                       placeholder="Your email address" 
+                       required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" 
+                       name="password" 
+                       placeholder="Create a password" 
+                       required>
+            </div>
+
+            <button type="submit" class="signup-btn">
+                Create Account
+            </button>
+        </form>
+
+        <p class="login-text">
+            Already have an account? <a href="/login.html">Login</a>
+        </p>
+    </div>
 </body>
 </html>
