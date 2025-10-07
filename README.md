@@ -1,3 +1,4 @@
+(_📌 Project is in ongoing developement phase.._)
 
 ## 📁 Project Structure
 
@@ -39,12 +40,21 @@ MediInsight/
 # 🧠 MediInsight: Medical Prediction Web App
 
 MediInsight is a secure medical prediction system that allows users to:
-- Predict Tumor and Diabetes conditions
+- Predict Tumor and Diabetes conditions asthey are initial testing models 
 - Generate, view, and export reports
 - Visualize predictions on dashboards (via Streamlit)
 - Administer user and report management
 
+````
 ---
+
+<img width="992" height="688" alt="image" src="https://github.com/user-attachments/assets/70cf30d6-47cb-453c-bc6c-bc64652dc6cb" />
+
+---
+
+<img width="1584" height="936" alt="image" src="https://github.com/user-attachments/assets/9ee8dd85-1309-48e0-b58d-74bed882f76b" />
+
+
 
 ## 🔧 Tech Stack
 
@@ -61,6 +71,9 @@ MediInsight is a secure medical prediction system that allows users to:
 ---
 
 ## 🏗️ Project Structure
+
+<img width="970" height="648" alt="image" src="https://github.com/user-attachments/assets/f0170b7f-35e0-41f8-a26d-b0aa5223813a" /><br/><br/>
+
 
 - `app.py`: Flask backend (auth, models, predictions)
 - `streamlit/dashboard.py`: Interactive analytics dashboard
@@ -221,6 +234,17 @@ Flask handles login securely. Streamlit doesn’t natively support sessions like
 We already configured this in the `streamlit_dashboard.py` using query parameters.
 
 ---
+
+## Project Status
+* Core features such as authentication, prediction forms, ML model integration, basic reporting, and dashboards have been implemented successfully.
+
+* The project is actively under development, focusing on improving scalability, enhancing user experience, and adding advanced features like:
+
+1. RESTful APIs for modularity.
+2. Improved session management integrating Flask and Streamlit.
+3. Cloud deployment setup for reliability and performance.
+4. Expanding ML models for broader medical conditions.\
+5. Future enhancements also aim to strengthen security, add real-time analytics, and optimize frontend responsiveness for a professional user experience.
 
 ### ✅ Summary
 
