@@ -229,5 +229,3 @@ We already configured this in the `streamlit_dashboard.py` using query parameter
 * **Navigation Flow**: Login via Flask → Optionally redirect or open Streamlit dashboard
 
 ---
-
-Would you like to implement the **redirect to Streamlit after login** or add a **dashboard button** to your Flask dashboard page?
