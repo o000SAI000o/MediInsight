@@ -230,4 +230,3 @@ We already configured this in the `streamlit_dashboard.py` using query parameter
 
 ---
 
-Would you like to implement the **redirect to Streamlit after login** or add a **dashboard button** to your Flask dashboard page?
